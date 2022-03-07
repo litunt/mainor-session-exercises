@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Form</title>
+</head>
+<body>
+<form onsubmit="return submitForm(this)">
+    <div>
+        <label>Firstname:</label>
+        <input type="text" name="firstname" id="firstname">
+    </div>
+    <div>
+        <label>Lastname:</label>
+        <input type="text" name="lastname" id="lastname">
+    </div>
+    <div>
+        <label>E-mail:</label>
+        <input type="email" name="email" id="email">
+    </div>
+    <div>
+        <label>Phone number:</label>
+        <input type="tel" name="phone" id="phone">
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <div>
+        <label>Your pet:</label>
+        <select id="pet-selection" name="pet-selection">
+            <option id="pet-cat" value="cat">cat</option>
+            <option id="pet-dog" value="dog">dog</option>
+            <option id="pet-rat" value="rat">rat</option>
+            <option id="pet-snake" value="snake">snake</option>
+            <option id="pet-bird" value="bird">bird</option>
+        </select>
+    </div>
+    <div>
+        <label>Pet's birthday:</label>
+        <input type="date" name="pet-birthday" id="pet-birthday">
+    </div>
+    <fieldset id="gender" style="border: none">
+        <label>Pet's gender:</label>
+        <input type="radio" name="pet-gender" value="male">
+        <label>M</label>
+        <input type="radio" name="pet-gender" value="female">
+        <label>F</label>
+    </fieldset>
+    <div>
+        <label>Pet's happiness level:</label>
+        <input type="range" name="pet-happiness" id="pet-happiness"
+               min="1" max="10" value="5"
+               oninput="this.nextElementSibling.value = this.value">
+        <output>5</output>
+    </div>
+    <div>
+        <label>Pet's photo:</label>
+        <input type="file" name="pet-photo" id="pet-photo">
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
+<script language="JavaScript">
+    function submitForm(form) {
+       let fname = document.getElementById('firstname').value;
+       let pet = document.getElementById('pet-selection').value;
+       let birthday = document.getElementById('pet-birthday').value;
+       console.log(
+       "First name: " + fname + "\n" +
+       "Pet: " +  pet + "\n" +
+       "Pet's birthday: " + birthday
+       );
+       return false;
+    }
+</script>
